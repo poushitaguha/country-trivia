@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-// import CountryDetails from './components/CountryDetails';
+import CountryDetails from './components/CountryDetails';
 import CountryQuiz from './components/CountryQuiz';
 import './index.scss';
 import logo from './images/trivia-logo.png';
@@ -13,9 +13,9 @@ class App extends Component {
     };
   }
 
-  // handleChange = event => {
-  //   this.setState({ value: event.target.value });
-  // };
+  handleChange = event => {
+    this.setState({ value: event.target.value });
+  };
 
   render() {
     return (
@@ -35,8 +35,8 @@ class App extends Component {
                   className='inputCountry'
                   type='text'
                   placeholder='Enter Country Name'
-                  // name={this.state.name}
-                  // onChange={this.handleChange}
+                  name={this.state.name}
+                  onChange={this.handleChange}
                 />
                 <br></br>
                 <br></br>
@@ -49,9 +49,9 @@ class App extends Component {
               </form>
             </Route>
 
-            {/* <Route path='/countrydetails'>
-            <CountryDetails />
-          </Route> */}
+            <Route path='/countrydetails'>
+              <CountryDetails />
+            </Route>
 
             <Route exact path='/countryquiz'>
               <CountryQuiz />

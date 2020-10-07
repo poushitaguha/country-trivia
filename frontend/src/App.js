@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   handleChange = event => {
-    this.setState({ value: event.target.value });
+    this.setState({ name: event.target.value });
   };
 
   render() {
@@ -35,7 +35,7 @@ class App extends Component {
                   className='inputCountry'
                   type='text'
                   placeholder='Enter Country Name'
-                  name={this.state.name}
+                  value={this.state.name}
                   onChange={this.handleChange}
                 />
                 <br></br>

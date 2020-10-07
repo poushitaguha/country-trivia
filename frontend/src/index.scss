@@ -49,10 +49,6 @@ header {
   max-width: 100vw;
 }
 
-button {
-  margin: 50px;
-}
-
 input {
   border-radius: 5px;
   box-shadow: none;
@@ -67,6 +63,7 @@ label {
 
 /* BUTTON STYLING IDEA TAKEN FROM  https://codepen.io/fossheim/pen/RwPeVKG*/
 button {
+  color: $primaryColor;
   display: block;
   cursor: pointer;
   outline: none;

@@ -8,11 +8,7 @@ class CountryQuiz extends Component {
   }
 
   render() {
-    return (
-      <form className='centered'>
-        <p>Test Questions</p>
-      </form>
-    );
+    return <form className='centered'></form>;
   }
 }
 

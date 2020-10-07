@@ -225,15 +225,36 @@ html {
 // Google fonts
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Merienda&display=swap');
 
-// Variables;
-$primary-color: #afedff;
-$secondary-color: #ffb0c6;
-$tertiary-color: #9bd694;
+// Variables
+$primaryColor: #afedff;
+$secondaryColor: #ffb0c6;
+$tertiaryColor: #9bd694;
 
 // Fonts
-$primary-font: 'Barlow', sans-serif;
-$secondary-font: 'Merienda', cursive;
+$primaryFont: 'Barlow', sans-serif;
+$secondaryFont: 'Merienda', cursive;
+
+// Mixin
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 body {
-  font-family: $primary-font;
+  font-family: $primaryFont;
+}
+
+header {
+  @include center;
+  height: 100px;
+}
+
+main {
+  @include center;
+  min-height: calc(100vh - 100px);
+}
+
+.button {
+  margin: 50px;
 }

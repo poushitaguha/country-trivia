@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Route, Link } from 'react-router-dom';
+import CountryDetails from './components/CountryDetails';
+import CountryQuiz from './components/CountryQuiz';
 import './index.scss';
 import logo from './images/trivia-logo.png';
 
@@ -10,10 +13,42 @@ class App extends Component {
 
   render() {
     return (
-      <header>
-        {/* <h1 className='sr-only'>Country Trivia</h1> */}
-        <img src={logo} alt='Logo for Qurantine Pursuit' />
-      </header>
+      <div>
+        <header>
+          {/* <h1 className='sr-only'>Country Trivia</h1> */}
+          <img src={logo} alt='Logo for Country Trivia' />
+        </header>
+        <main>
+          <Route exact path='/'>
+            <form className='centered'>
+              <label htmlFor='inputCountry'>
+                Enter the name of any Country in this world
+              </label>
+              <br></br>
+              <input
+                className='inputCountry'
+                type='text'
+                id='inputCountry'
+                placeholder='Enter Country Name'
+              />
+              <button>
+                <Link to='/countrydetails'>Display Country Details</Link>
+              </button>
+              <button>
+                <Link to='/countryquiz'>Play Country Quiz</Link>
+              </button>
+            </form>
+          </Route>
+
+          {/* <Route path='/countrydetails'>
+            <CountryDetails />
+          </Route> */}
+
+          <Route path='/countryquiz'>
+            <CountryQuiz />
+          </Route>
+        </main>
+      </div>
     );
   }
 }

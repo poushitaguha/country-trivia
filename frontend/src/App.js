@@ -9,7 +9,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      countryName: ''
+      countryName: '',
+      countryField: '',
+      errors: {}
     };
   }
 
@@ -34,6 +36,8 @@ class App extends Component {
                 <input
                   className='inputCountry'
                   type='text'
+                  id='inputCountry'
+                  required
                   placeholder='Enter Country Name'
                   value={this.state.countryName}
                   onChange={this.handleChange}
@@ -49,7 +53,7 @@ class App extends Component {
             </Route>
 
             <Route path='/countrydetails'>
-              <CountryDetails />
+              <CountryDetails countryName={this.state.countryName} />
             </Route>
 
             <Route exact path='/countryquiz'>

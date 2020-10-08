@@ -15,17 +15,19 @@ class CountryDetails extends Component {
   }
 
   componentDidMount = () => {
-    axios.get('countrydetails').then(response => {
-      console.log(response);
-      this.setState({
-        capital: response.data.capital,
-        name: response.data.name,
-        flag: response.data.capital,
-        currency: response.data.currency,
-        region: response.data.region,
-        population: response.data.population
+    axios
+      .get(`countryquiz?countryName=${this.props.countryName}`)
+      .then(response => {
+        // console.log(response);
+        this.setState({
+          capital: response.data.capital,
+          name: response.data.name,
+          flag: response.data.capital,
+          currency: response.data.currency,
+          region: response.data.region,
+          population: response.data.population
+        });
       });
-    });
   };
 
   render() {

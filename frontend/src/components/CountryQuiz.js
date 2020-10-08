@@ -45,11 +45,7 @@ class CountryQuiz extends Component {
   submitCapital = event => {
     event.preventDefault();
     const { capital, inputCapital } = this.state;
-
-    // console.log('capital' + capital);
-    // console.log('inputCapital' + inputCapital);
-
-    if (capital === inputCapital) {
+    if (capital.toLowerCase() === inputCapital.toLowerCase()) {
       alert('This is the correct answer. Well done!!');
     } else {
       alert(`Incorrect answer. The correct answer is ${this.state.capital}`);
@@ -59,11 +55,7 @@ class CountryQuiz extends Component {
   submitCurrency = event => {
     event.preventDefault();
     const { currency, inputCurrency } = this.state;
-
-    // console.log('currency' + currency);
-    // console.log('inputCurrency' + inputCurrency);
-
-    if (currency === inputCurrency) {
+    if (currency.toLowerCase() === inputCurrency.toLowerCase()) {
       alert('This is the correct answer. Well done!!');
     } else {
       alert(`Incorrect answer. The correct answer is ${this.state.currency}`);
@@ -73,11 +65,7 @@ class CountryQuiz extends Component {
   submitContinent = event => {
     event.preventDefault();
     const { region, inputContinent } = this.state;
-
-    // console.log('region' + region);
-    // console.log('inputContinent' + inputContinent);
-
-    if (region === inputContinent) {
+    if (region.toLowerCase() === inputContinent.toLowerCase()) {
       alert('This is the correct answer. Well done!!');
     } else {
       alert(`Incorrect answer. The correct answer is ${this.state.region}`);

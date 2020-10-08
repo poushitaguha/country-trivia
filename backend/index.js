@@ -4,7 +4,8 @@ const request = require('request');
 const port = 5000;
 
 app.get('/countrydetails', (req, res) => {
-  const country = 'canada';
+  // console.log(req.query.countryName);
+  const country = req.query.countryName;
   request(
     'https://restcountries.eu/rest/v2/name/' + country + '?fullText=true',
     function(error, response, body) {

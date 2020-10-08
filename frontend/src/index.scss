@@ -61,6 +61,45 @@ label {
   font-size: 1.5rem;
 }
 
+.flag img {
+  width: 80%;
+}
+
+.flag {
+  width: 30%;
+}
+
+.cntryinfo {
+  @include center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+}
+
+.p-head {
+  color: $quinaryColor;
+  font: $secondaryFont;
+  font-size: x-large;
+  margin-bottom: 0.5 em;
+}
+
+.p-body {
+  height: 100%;
+  font: $primaryFont;
+  font-size: x-large;
+  color: maroon;
+  font: $secondaryFont;
+}
+
+.detail-elemnt {
+  width: 60%;
+}
+
 /* BUTTON STYLING IDEA TAKEN FROM  https://codepen.io/fossheim/pen/RwPeVKG*/
 button {
   color: $primaryColor;

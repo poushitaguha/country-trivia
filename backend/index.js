@@ -12,14 +12,25 @@ app.get('/countrydetails', (req, res) => {
       if (!error && response.statusCode === 200) {
         var parsedData = JSON.parse(body);
         for (let i = 0; i < parsedData.length; i++) {
-          // Get the Country, Capital, Continent, Currency, Flag and Population from parsed JSON data
+          console.log(parsedData[i]);
+          // Get the Country, Capital, Continent, Currency, Flag, Population and Language
+          // from parsed JSON data
           var name = parsedData[i].name;
           var capital = parsedData[i].capital;
           var region = parsedData[i].region;
           var flag = parsedData[i].flag;
           var currency = parsedData[i].currencies[0].name;
           var population = parsedData[i].population;
-          res.send({ name, capital, region, currency, flag, population });
+          var language = parsedData[i].languages[0].name;
+          res.send({
+            name,
+            capital,
+            region,
+            flag,
+            currency,
+            population,
+            language
+          });
         }
       }
     }

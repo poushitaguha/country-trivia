@@ -4,6 +4,7 @@ import axios from 'axios';
 class CountryQuiz extends Component {
   constructor(props) {
     super(props);
+    console.log(props);
     this.state = {
       name: '',
       capital: '',
@@ -65,10 +66,11 @@ class CountryQuiz extends Component {
 
   render() {
     return (
-      <form>
+      <div>
         <form className='centered' onSubmit={this.submitCapital}>
           <label htmlFor='inputCapital'>
-            What is the capital of {this.state.name}? {this.state.capital}
+            What is the capital of {this.props.countryName}?
+            {/* {this.state.capital} */}
           </label>
           <input
             className='inputCapital'
@@ -82,7 +84,8 @@ class CountryQuiz extends Component {
         <br></br>
         <form className='centered' onSubmit={this.submitCurrency}>
           <label htmlFor='inputCurrency'>
-            What is the currency of {this.state.name}? {this.state.currency}
+            What is the currency of {this.props.countryName}?
+            {/* {this.state.currency} */}
           </label>
           <input
             className='inputCurrency'
@@ -96,7 +99,8 @@ class CountryQuiz extends Component {
 
         <form className='centered' onSubmit={this.submitContinent}>
           <label htmlFor='inputContinent'>
-            Which continent does {this.state.name} fall in? {this.state.region}
+            Which continent does {this.props.countryName} fall in?
+            {/* {this.state.region} */}
           </label>
           <input
             className='inputContinent'
@@ -106,7 +110,7 @@ class CountryQuiz extends Component {
           />
           <button>Submit</button>
         </form>
-      </form>
+      </div>
     );
   }
 }

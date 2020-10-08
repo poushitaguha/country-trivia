@@ -9,12 +9,13 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: ''
+      countryName: ''
     };
   }
 
   handleChange = event => {
-    this.setState({ name: event.target.value });
+    this.setState({ countryName: event.target.value });
+    console.log(this.state);
   };
 
   render() {
@@ -35,7 +36,7 @@ class App extends Component {
                   className='inputCountry'
                   type='text'
                   placeholder='Enter Country Name'
-                  value={this.state.name}
+                  value={this.state.countryName}
                   onChange={this.handleChange}
                 />
                 <br></br>
@@ -54,7 +55,7 @@ class App extends Component {
             </Route>
 
             <Route exact path='/countryquiz'>
-              <CountryQuiz />
+              <CountryQuiz countryName={this.state.countryName} />
             </Route>
           </Switch>
         </main>

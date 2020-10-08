@@ -27,10 +27,10 @@ app.get('/countrydetails', (req, res) => {
 });
 
 app.get('/countryquiz', (req, res) => {
-  // const country = document.getElementById('inputCountry').value;
+  // console.log(req.query.countryName);
+  const country = req.query.countryName;
   request(
-    // 'https://restcountries.eu/rest/v2/name/' + country + '?fullText=true',
-    'https://restcountries.eu/rest/v2/name/india?fullText=true',
+    'https://restcountries.eu/rest/v2/name/' + country + '?fullText=true',
     function(error, response, body) {
       if (!error && response.statusCode === 200) {
         var parsedData = JSON.parse(body);

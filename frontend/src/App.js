@@ -9,14 +9,19 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      countryName: '',
-      countryField: '',
-      errors: {}
+      countryName: ''
     };
   }
 
   handleChange = event => {
     this.setState({ countryName: event.target.value });
+  };
+
+  handleClick = event => {
+    event.preventDefault();
+    this.setState({
+      countryName: ''
+    });
   };
 
   render() {
@@ -48,6 +53,9 @@ class App extends Component {
                 </button>
                 <button>
                   <Link to='/countryquiz'>Play Country Quiz</Link>
+                </button>
+                <button onClick={this.handleClick}>
+                  Enter another Country
                 </button>
               </form>
             </Route>

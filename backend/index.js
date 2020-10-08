@@ -4,7 +4,7 @@ const request = require('request');
 const port = 5000;
 
 app.get('/countrydetails', (req, res) => {
-  // console.log(req.query.countryName);
+  // Get Country Name from req
   const country = req.query.countryName;
   request(
     'https://restcountries.eu/rest/v2/name/' + country + '?fullText=true',
@@ -12,8 +12,7 @@ app.get('/countrydetails', (req, res) => {
       if (!error && response.statusCode === 200) {
         var parsedData = JSON.parse(body);
         for (let i = 0; i < parsedData.length; i++) {
-          // console.log(parsedData[i]);
-          // Get the Country, Capital, Continent and Currency from parsed JSON data
+          // Get the Country, Capital, Continent, Currency, Flag and Population from parsed JSON data
           var name = parsedData[i].name;
           var capital = parsedData[i].capital;
           var region = parsedData[i].region;
@@ -28,7 +27,7 @@ app.get('/countrydetails', (req, res) => {
 });
 
 app.get('/countryquiz', (req, res) => {
-  // console.log(req.query.countryName);
+  // Get Country Name from req
   const country = req.query.countryName;
   request(
     'https://restcountries.eu/rest/v2/name/' + country + '?fullText=true',
@@ -36,7 +35,6 @@ app.get('/countryquiz', (req, res) => {
       if (!error && response.statusCode === 200) {
         var parsedData = JSON.parse(body);
         for (let i = 0; i < parsedData.length; i++) {
-          // console.log(parsedData[i]);
           // Get the Country, Capital, Continent and Currency from parsed JSON data
           var name = parsedData[i].name;
           var capital = parsedData[i].capital;

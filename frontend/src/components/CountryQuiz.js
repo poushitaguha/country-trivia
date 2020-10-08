@@ -4,7 +4,6 @@ import axios from 'axios';
 class CountryQuiz extends Component {
   constructor(props) {
     super(props);
-    // console.log(props);
     this.state = {
       name: '',
       capital: '',
@@ -20,7 +19,6 @@ class CountryQuiz extends Component {
     axios
       .get(`countryquiz?countryName=${this.props.countryName}`)
       .then(response => {
-        // console.log(response);
         this.setState({
           name: response.data.name,
           capital: response.data.capital,
@@ -72,9 +70,19 @@ class CountryQuiz extends Component {
     }
   };
 
+  handleClick = event => {
+    event.preventDefault();
+    this.setState({
+      ...this.state,
+      inputCapital: '',
+      inputCurrency: '',
+      inputContinent: ''
+    });
+  };
+
   render() {
     return (
-      <div>
+      <div className='centered'>
         <form className='centered' onSubmit={this.submitCapital}>
           <label htmlFor='inputCapital'>
             What is the capital of {this.props.countryName}?
@@ -83,12 +91,12 @@ class CountryQuiz extends Component {
             className='inputCapital'
             type='text'
             placeholder='Enter Capital'
+            value={this.state.inputCapital}
             onChange={this.inputCapital}
           />
           <button type='submit'>Submit</button>
         </form>
 
-        <br></br>
         <form className='centered' onSubmit={this.submitCurrency}>
           <label htmlFor='inputCurrency'>
             What is the currency of {this.props.countryName}?
@@ -97,11 +105,11 @@ class CountryQuiz extends Component {
             className='inputCurrency'
             type='text'
             placeholder='Enter Currency'
+            value={this.state.inputCurrency}
             onChange={this.inputCurrency}
           />
           <button>Submit</button>
         </form>
-        <br></br>
 
         <form className='centered' onSubmit={this.submitContinent}>
           <label htmlFor='inputContinent'>
@@ -111,10 +119,14 @@ class CountryQuiz extends Component {
             className='inputContinent'
             type='text'
             placeholder='Enter Continent'
+            value={this.state.inputContinent}
             onChange={this.inputContinent}
           />
           <button>Submit</button>
         </form>
+
+        <br></br>
+        <button onClick={this.handleClick}>Play Again!!</button>
       </div>
     );
   }

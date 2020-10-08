@@ -14,15 +14,17 @@ class CountryQuiz extends Component {
   }
 
   componentDidMount = () => {
-    axios.get('countryquiz').then(response => {
-      console.log(response);
-      this.setState({
-        name: response.data.name,
-        capital: response.data.capital,
-        currency: response.data.currency,
-        region: response.data.region
+    axios
+      .get(`countryquiz?countryName=${this.props.countryName}`)
+      .then(response => {
+        console.log(response);
+        this.setState({
+          name: response.data.name,
+          capital: response.data.capital,
+          currency: response.data.currency,
+          region: response.data.region
+        });
       });
-    });
   };
 
   inputCapital = event => {

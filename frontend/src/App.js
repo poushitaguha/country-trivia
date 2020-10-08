@@ -15,7 +15,6 @@ class App extends Component {
 
   handleChange = event => {
     this.setState({ countryName: event.target.value });
-    console.log(this.state);
   };
 
   render() {
@@ -39,7 +38,6 @@ class App extends Component {
                   value={this.state.countryName}
                   onChange={this.handleChange}
                 />
-                <br></br>
                 <br></br>
                 <button>
                   <Link to='/countrydetails'>Display Country Details</Link>

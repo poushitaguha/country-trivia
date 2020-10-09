@@ -47,15 +47,13 @@ class App extends Component {
                   value={this.state.countryName}
                   onChange={this.handleChange}
                 />
+                <button onClick={this.handleClick}>Clear Country Name</button>
                 <br></br>
                 <button>
                   <Link to='/countrydetails'>Display Country Details</Link>
                 </button>
                 <button>
                   <Link to='/countryquiz'>Play Country Quiz</Link>
-                </button>
-                <button onClick={this.handleClick}>
-                  Enter another Country
                 </button>
               </form>
             </Route>
